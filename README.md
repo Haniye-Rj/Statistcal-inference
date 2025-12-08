@@ -122,6 +122,342 @@ departures from normality.
 
 One-way ANOVA follow-up analysis
 
+Statistical Inference — A Practical Guide
+
+Statistical inference is the foundation of modern data analysis. It provides the tools to make conclusions about a population based on sample data. This document presents the essential concepts of inference, parameter estimation, and hypothesis testing in a clear, structured, and practical way.
+
+## 1. Foundations of Statistical Inference
+1.1 What Is Statistical Inference?
+
+Statistical inference is the branch of statistics that uses probability theory to make conclusions about a population based on sample data.
+
+It answers questions such as:
+
+Is the population mean equal to a specific value?
+
+Are two groups significantly different?
+
+Does the independent variable affect the dependent variable?
+
+1.2 The Two Pillars of Inference
+1. Parameter Estimation
+
+We estimate an unknown population parameter (e.g., a population mean μ or proportion p).
+
+Examples:
+
+Estimating average income
+
+Estimating defect rate in products
+
+2. Hypothesis Testing
+
+A structured decision-making process used to assess claims about population parameters.
+
+Examples:
+
+Is μ₁ = μ₂?
+
+Is the mean different from 10?
+
+Are three group means equal?
+
+## 2. Hypothesis Testing — The Core of Decision-Making
+
+Hypothesis testing is a standardized framework that allows researchers to assess evidence from sample data.
+
+2.1 Hypothesis Structure
+
+In all statistical tests, we define two mutually exclusive statements:
+
+Null Hypothesis (H₀)
+
+Represents the “no effect”, “no difference”, or the status quo
+
+Example:
+
+𝐻
+0
+:
+  
+𝜇
+1
+=
+𝜇
+2
+H
+0
+	​
+
+:μ
+1
+	​
+
+=μ
+2
+	​
+
+Alternative Hypothesis (H₁)
+
+Represents the presence of an effect or difference
+
+Example:
+
+𝐻
+1
+:
+  
+𝜇
+1
+≠
+𝜇
+2
+H
+1
+	​
+
+:μ
+1
+	​
+
+
+=μ
+2
+	​
+
+2.2 Decision Criteria
+
+Decisions rely on two core components:
+
+2.2.1 Significance Level (α)
+
+The probability of making a Type I Error (rejecting a true H₀).
+
+Common choices:
+
+α = 0.05
+
+α = 0.01
+
+Interpretation:
+
+α = 0.05 means a 5% acceptable risk of concluding there is an effect when there is none.
+
+2.2.2 P-value
+
+The p-value is the probability of observing your sample data (or more extreme) if the null hypothesis were true.
+
+Interpretation rules:
+
+Method	Rule	Conclusion
+P-value	If p ≤ α	Reject H₀ (evidence supports H₁)
+	If p > α	Fail to reject H₀
+Critical Value	If test statistic is in rejection region	Reject H₀
+	Otherwise	Fail to reject H₀
+2.3 Using p-value vs Critical Value
+Using Critical Value
+
+If test statistic > critical value → Reject H₀
+
+If test statistic ≤ critical value → Fail to reject H₀
+
+Using p-value
+
+If p ≤ α → evidence against H₀ → Reject
+
+If p > α → not enough evidence → Fail to reject
+
+## 3. One-Sample Tests
+### 3.1 One-Sample t-Test (Parametric)
+Data Requirements
+
+One numeric sample
+
+Interval/ratio scale
+
+Data approximately normal
+
+Moderate skew OK if no heavy outliers
+
+CLT justifies normality if n > 30
+
+Hypotheses
+𝐻
+0
+:
+𝜇
+=
+𝜇
+0
+H
+0
+	​
+
+:μ=μ
+0
+	​
+
+𝐻
+1
+:
+  
+𝜇
+≠
+𝜇
+0
+H
+1
+	​
+
+:μ
+
+=μ
+0
+	​
+
+Interpretation
+
+Fail to reject H₀ → sample mean is not significantly different from μ₀
+
+Reject H₀ → sample mean is significantly different
+
+Normality Checks
+
+Shapiro–Wilk
+
+Jarque–Bera
+
+Visual: histogram, QQ plot
+
+### 3.2 One-Sample Wilcoxon Signed Rank Test (Nonparametric)
+
+Used when data do not meet t-test’s normality assumption.
+
+Data Type
+
+One sample
+
+Ordinal, interval, or ratio
+
+Symmetry around the median preferred
+
+Procedure Summary
+
+Compute differences: 
+𝑋
+𝑖
+−
+𝑀
+𝐸
+X
+i
+	​
+
+−ME
+
+Remove differences equal to zero
+
+Rank absolute differences
+
+Compute:
+
+S = sum of positive ranks
+
+F = sum of negative ranks
+
+Test statistic = smaller of (S, F)
+
+## 4. Analysis of Variance (ANOVA)
+
+ANOVA assesses whether group means differ more than expected by chance.
+
+4.1 What ANOVA Does
+
+It tests whether differences among group means are statistically significant.
+
+One-way ANOVA → One independent variable
+
+Two-way ANOVA → Two independent variables
+
+4.2 Data Requirements
+
+Dependent variable: continuous (interval/ratio)
+
+Independent variable: categorical with ≥ 2 groups
+
+Groups independent
+
+Residuals normally distributed
+
+Equal variances (homoscedasticity)
+
+4.3 Hypotheses
+𝐻
+0
+:
+  
+𝜇
+1
+=
+𝜇
+2
+=
+⋯
+=
+𝜇
+𝑘
+H
+0
+	​
+
+:μ
+1
+	​
+
+=μ
+2
+	​
+
+=⋯=μ
+k
+	​
+
+𝐻
+1
+:
+  
+At least one mean differs
+H
+1
+	​
+
+:At least one mean differs
+4.4 Assumption Checks
+Normality of Residuals
+
+Shapiro–Wilk
+
+Jarque–Bera
+
+Variance Equality Tests
+
+Bartlett’s test (sensitive to non-normality)
+
+Levene’s test (robust)
+
+Fligner–Killeen test (non-parametric, very robust)
+
+## 5. One-Way ANOVA Follow-Up Analysis
+
+If ANOVA is significant, we conduct post-hoc comparisons to identify which groups differ.
+
+Examples include:
+
+Tukey HSD
+
+Bonferroni
+
+Scheffé
 
 
 
