@@ -1,9 +1,6 @@
 # Statistcal-inference
-#The Journey of Statistical Inference: From Sample to Population
 
 Statistical Inference: A Comprehensive Guide and Reference
-Chapter 1: Foundations of Statistical Inference
-This chapter introduces the core concepts, defining the scope and purpose of inference as a bridge between sample data and population knowledge.
 
 1.1 Defining Statistical Inference
 Statistical inference is the branch of statistics built upon probability theory and distributions. It provides the methodology to draw robust conclusions about a larger population based on data collected from a limited sample.
@@ -458,6 +455,271 @@ Tukey HSD
 Bonferroni
 
 Scheffé
+## 4. Analysis of Variance (ANOVA) – Extended
+
+ANOVA assesses whether group means differ more than expected by chance. It generalizes the t-test to more than two groups and handles multiple independent variables.
+
+4.1 One-Way ANOVA
+Purpose
+
+Test if the means of 3 or more independent groups differ.
+
+Data Requirements
+
+Dependent variable: interval/ratio, continuous
+
+Independent variable: categorical, ≥ 2 groups
+
+Residuals approximately normal
+
+Homoscedasticity (equal variances)
+
+Observations independent
+
+Hypotheses
+𝐻
+0
+:
+𝜇
+1
+=
+𝜇
+2
+=
+⋯
+=
+𝜇
+𝑘
+H
+0
+	​
+
+:μ
+1
+	​
+
+=μ
+2
+	​
+
+=⋯=μ
+k
+	​
+
+𝐻
+1
+:
+At least one mean differs
+H
+1
+	​
+
+:At least one mean differs
+4.2 One-Way ANOVA With Blocks
+
+Also called blocked ANOVA, used to control for non-independence or suspected variation from other factors.
+
+Data
+
+One measurement variable across 2+ groups, distributed among ≥2 blocks
+
+Dependent variable: interval/ratio, continuous
+
+Independent variable: categorical, ≥2 levels
+
+Blocking variable: categorical, ≥2 levels
+
+Residuals normal
+
+Homoscedasticity
+
+Observations independent
+
+Hypotheses
+
+Treatment effect:
+
+𝐻
+0
+:
+Group means equal
+𝐻
+1
+:
+At least one group mean differs
+H
+0
+	​
+
+:Group means equalH
+1
+	​
+
+:At least one group mean differs
+
+Block effect:
+
+𝐻
+0
+:
+Block means equal
+H
+0
+	​
+
+:Block means equal
+Notes
+
+Blocks account for variation unrelated to main treatments
+
+Block effects may not be of primary interest
+
+Helps mitigate violations of independence
+
+4.3 One-Way ANOVA Types of Sums of Squares (SS)
+
+When data are unbalanced, the calculation of sums of squares can differ:
+
+Full model: SS(A, B, AB) includes factors A, B, and their interaction AB
+
+Partial models: SS(A, B) excludes interaction; SS(B, AB) excludes factor A
+
+Incremental sums of squares = difference between full and partial models
+
+Type I: sequential; results depend on factor order
+
+Type II: for models with no interaction; tests main effects controlling for other main effects
+
+Type III: valid with interactions; tests main effects accounting for interactions
+
+Note: With interactions present, interpreting main effects alone is less meaningful.
+
+4.4 One-Way ANOVA With Random Blocks
+Data
+
+Same as one-way ANOVA with blocks
+
+Blocking variable treated as random effect (random selection of block levels)
+
+Hypotheses
+𝐻
+0
+:
+Group means equal
+H
+0
+	​
+
+:Group means equal
+𝐻
+1
+:
+At least one group mean differs
+H
+1
+	​
+
+:At least one group mean differs
+Notes
+
+Used when the analyst wants to account for block effects but is not interested in specific block levels
+
+Example: Earnings vs Gender across 3 cities
+
+4.5 Fixed, Random, and Mixed Effects Models
+Type	Description	When to Use
+Fixed effects	Parameters are non-random, predictable	Estimate effect of all levels in the population (e.g., males & females)
+Random effects	Parameters are random variables	Account for random variation from a factor sampled from a population
+Mixed effects	Combination of fixed and random	Handle repeated measures or hierarchical data; maintain independence assumptions
+4.6 Repeated Measures ANOVA
+Data
+
+Same unit measured multiple times (time or conditions)
+
+Dependent variable: interval/ratio, continuous
+
+Independent variable: categorical
+
+Residuals normal
+
+Homoscedasticity
+
+Moderate deviation from normality allowed
+
+Hypotheses
+𝐻
+0
+:
+Means across time/conditions equal
+H
+0
+	​
+
+:Means across time/conditions equal
+𝐻
+1
+:
+At least one mean differs
+H
+1
+	​
+
+:At least one mean differs
+Notes
+
+Accounts for autocorrelation in repeated measures
+
+Blocks (subjects) may be random to deal with non-independence
+
+Often used in panel data with unit ID and time ID
+
+4.7 Two-Way ANOVA (Factorial ANOVA)
+Data
+
+One dependent variable measured across two independent factors
+
+Dependent variable: interval/ratio, continuous
+
+Independent variables: categorical, ≥2 levels each
+
+Residuals normal
+
+Homoscedasticity
+
+Observations independent (no repeated measures)
+
+Hypotheses
+
+Main effect A: means equal across levels of factor A
+
+Main effect B: means equal across levels of factor B
+
+Interaction effect: combined effect of A & B equal across levels
+
+𝐻
+0
+:
+All means equal
+𝐻
+1
+:
+At least one mean differs
+H
+0
+	​
+
+:All means equalH
+1
+	​
+
+:At least one mean differs
+Post-Hoc Analysis Rules
+
+No significant effects: no post-hoc testing
+
+Only main effects significant: post-hoc comparisons for significant main effects only
+
+Interaction significant: post-hoc comparisons for interaction effect
 
 
 
