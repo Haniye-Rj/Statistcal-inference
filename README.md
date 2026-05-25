@@ -1,4 +1,4 @@
-# 📚 Statistical Inference: A Comprehensive Study Guide
+#  Statistical Inference: A Comprehensive Study Guide
 
 Statistical inference is the process of drawing **robust conclusions** about a large **population** based on data collected from a limited **sample**. It is built upon the principles of probability and distributions.
 
